@@ -5,24 +5,24 @@
 
 int main(int argc, char **argv)
 {
-        FILE *f;
-        char *line;
-        size_t line_buffer_len;
-        ssize_t read_size;
-        
-        f = fopen("dummy_03.txt", "r");
-        assert(f != NULL);
+	FILE *f;
+	char *line;
+	size_t line_buffer_len;
+	ssize_t read_size;
 
-        line = NULL;
-        line_buffer_len = 0;
-        read_size = 0;
-        while ((read_size = getline(&line, &line_buffer_len, f)) != -1) {
-                line[read_size - 1] = '\0';
-                printf("Line = %s\n", line);
-        }
-        assert(feof(f));
+	f = fopen("dummy_03.txt", "r");
+	assert(f != NULL);
 
-        free(line);
-        fclose(f);
-        return 0;
+	line = NULL;
+	line_buffer_len = 0;
+	read_size = 0;
+	while ((read_size = getline(&line, &line_buffer_len, f)) != -1) {
+		line[read_size - 1] = '\0';
+		printf("Line = %s\n", line);
+	}
+	assert(feof(f));
+
+	free(line);
+	fclose(f);
+	return 0;
 }

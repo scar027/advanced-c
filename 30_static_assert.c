@@ -10,8 +10,8 @@
 
 int main(int argc, char **argv)
 {
-        constexpr int num = 2;
-        /* static_assert available since C23 */
-        static_assert(num % 2 == 1, "num is NOT even!");
-        return 0;
+	constexpr int num = 2;
+	/* static_assert available since C23 */
+	static_assert(num % 2 == 1, "num is NOT even!");
+	return 0;
 }
